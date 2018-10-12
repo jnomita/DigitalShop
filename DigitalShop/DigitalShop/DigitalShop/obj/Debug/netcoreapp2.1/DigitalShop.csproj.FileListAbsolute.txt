@@ -37,3 +37,4 @@ E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop\bin\Debug\netcoreapp2.1\
 E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop\bin\Debug\netcoreapp2.1\DigitalShop.Domain.dll
 E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop\bin\Debug\netcoreapp2.1\DigitalShop.Data.pdb
 E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop\bin\Debug\netcoreapp2.1\DigitalShop.Domain.pdb
+E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop\obj\Debug\netcoreapp2.1\Razor\Views\Category\Index.g.cshtml.cs

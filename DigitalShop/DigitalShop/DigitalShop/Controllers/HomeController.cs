@@ -8,11 +8,12 @@ using DigitalShop.Models;
 
 namespace DigitalShop.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public IActionResult Index()
         {
-            return View();
+            var model = proRes.GetProducts().ToList();
+            return View(model);
         }
 
         public IActionResult About()

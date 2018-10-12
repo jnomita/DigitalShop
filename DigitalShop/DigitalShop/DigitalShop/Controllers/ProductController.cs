@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DigitalShop.Controllers
 {
-    public class CategoryController : Controller
+    public class ProductController : Controller
     {
-        public IActionResult Index(string categoryurl)
+        public IActionResult Index(string producturl)
         {
             return View();
         }

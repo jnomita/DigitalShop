@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DigitalShop.Constraint;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -54,6 +55,20 @@ namespace DigitalShop
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                name: "category",
+                template: "{categoryurl}",
+                constraints: new { categoryurl = new CategoryConstraint() },
+                defaults: new {controller="Category", action="Index"}
+               );
+
+               routes.MapRoute(
+                name: "product",
+                template: "{producturl}",
+                constraints: new { producturl = new CategoryConstraint() },
+                defaults: new {controller="Product", action="Index"}
+               );
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
