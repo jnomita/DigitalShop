@@ -8,7 +8,7 @@ namespace DigitalShop.Models
 {
     public class MenuAndHeaderModel
     {
-        public List<Product> ProductsCart { set; get; }
+        public List<CartItemModel> ProductsCart { set; get; }
         public List<Category> Menus { get; set; }
     }
 }

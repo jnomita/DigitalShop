@@ -22,13 +22,14 @@ namespace DigitalShop.Controllers
                 RecentlyViewed = GetRecentlyViewed(),
                 TopNew = proRes.GetTopNewProducts()
             };
+            HttpContext.Session.SetString("abc", "abc");
             return View(model);
         }
 
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
-
+            var a = HttpContext.Session.GetString("abc");
             return View();
         }
 

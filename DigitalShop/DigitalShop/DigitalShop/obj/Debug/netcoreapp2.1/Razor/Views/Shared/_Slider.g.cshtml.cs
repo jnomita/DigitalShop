@@ -23,8 +23,13 @@ using DigitalShop.Models;
 
 #line default
 #line hidden
+#line 3 "E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop\Views\_ViewImports.cshtml"
+using DigitalShop.Domain;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3324e992d057393d8202505084d895fd264472ee", @"/Views/Shared/_Slider.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bafa441670eb6cdf81c6a1d111a35fb128ead632", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"68b49878276672c3e314d1186296c4ac260e5f99", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__Slider : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

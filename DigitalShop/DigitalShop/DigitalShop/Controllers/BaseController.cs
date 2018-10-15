@@ -7,6 +7,7 @@ using DigitalShop.Domain;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http;
+using DigitalShop.Models;
 
 namespace DigitalShop.Controllers
 {
@@ -30,8 +31,28 @@ namespace DigitalShop.Controllers
             {
                 list = new List<Product>();
             }
-            list.Add(RecentlyViewedProduct);
+            if (!list.Any(p => p.ProductID == RecentlyViewedProduct.ProductID))
+            {
+                list.Add(RecentlyViewedProduct);
+            }
             SetObjectAsJson("RecentlyViewed", list);
+        }
+
+        protected CartModel GetCart()
+        {
+            var cart = GetObjectFromJson<CartModel>("Cart");
+            return cart!=null ? cart : new CartModel() { Items = new List<CartItemModel>()};
+        }
+        protected void SetCart (CartModel model)
+        {
+            var cart = model;
+            if (cart == null)
+            {
+                cart = new CartModel() {
+                    Items = new List<CartItemModel>()
+                };
+            }
+            SetObjectAsJson("Cart", cart);
         }
 
         private void SetObjectAsJson( string key, object value)
@@ -42,7 +63,6 @@ namespace DigitalShop.Controllers
         private T GetObjectFromJson<T>(string key)
         {
             var value =  HttpContext.Session.GetString(key);
-
             return value == null ? default(T) : JsonConvert.DeserializeObject<T>(value);
         }
     }

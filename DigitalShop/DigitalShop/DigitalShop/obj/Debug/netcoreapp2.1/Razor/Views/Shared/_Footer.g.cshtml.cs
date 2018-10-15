@@ -23,8 +23,13 @@ using DigitalShop.Models;
 
 #line default
 #line hidden
+#line 3 "E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop\Views\_ViewImports.cshtml"
+using DigitalShop.Domain;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ba5954788b5b4625208b44887387d10d1784080f", @"/Views/Shared/_Footer.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bafa441670eb6cdf81c6a1d111a35fb128ead632", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"68b49878276672c3e314d1186296c4ac260e5f99", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__Footer : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("action", new global::Microsoft.AspNetCore.Html.HtmlString("#"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -106,7 +111,7 @@ using DigitalShop.Models;
                         ");
             EndContext();
             BeginContext(2648, 199, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b5e51ddecc2943a0897f6902aaa66223", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fc8b3a9d61a641a3b16e572543a2cbe2", async() => {
                 BeginContext(2665, 175, true);
                 WriteLiteral("\r\n                            <input type=\"email\" placeholder=\"Type your email\">\r\n                            <input type=\"submit\" value=\"Subscribe\">\r\n                        ");
                 EndContext();

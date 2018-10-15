@@ -23,8 +23,13 @@ using DigitalShop.Models;
 
 #line default
 #line hidden
+#line 3 "E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop\Views\_ViewImports.cshtml"
+using DigitalShop.Domain;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b93df4061ff384cf01ca37cf92dff41c251f235f", @"/Views/Home/Contact.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bafa441670eb6cdf81c6a1d111a35fb128ead632", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"68b49878276672c3e314d1186296c4ac260e5f99", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Contact : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

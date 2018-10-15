@@ -6,11 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DigitalShop.Controllers
 {
-    public class CategoryController : Controller
+    public class CategoryController : BaseController
     {
         public IActionResult Index(string categoryurl)
         {
-            return View();
+            var category = catRes.GetHaveProductCategoryByUrl(categoryurl);
+            return View(category);
         }
     }
 }

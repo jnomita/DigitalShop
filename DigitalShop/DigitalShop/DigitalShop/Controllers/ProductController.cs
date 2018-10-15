@@ -10,9 +10,9 @@ namespace DigitalShop.Controllers
     {
         public IActionResult Index(string producturl)
         {
-            var product = proRes.GetProductByUrl(producturl);
-            AddRecentlyViewed(product);
-            return View();
+            var product = proRes.GetHaveCategoryProductByUrl(producturl);
+            AddRecentlyViewed(proRes.GetProductByUrl(producturl));
+            return View(product);
         }
     }
 }

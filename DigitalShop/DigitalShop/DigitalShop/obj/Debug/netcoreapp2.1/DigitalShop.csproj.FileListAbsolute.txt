@@ -39,3 +39,4 @@ E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop\obj\Debug\netcoreapp2.1\
 E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop\obj\Debug\netcoreapp2.1\DigitalShop.csproj.CopyComplete
 E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop\obj\Debug\netcoreapp2.1\DigitalShop.dll
 E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop\obj\Debug\netcoreapp2.1\DigitalShop.pdb
+E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop\obj\Debug\netcoreapp2.1\Razor\Views\Cart\Index.g.cshtml.cs

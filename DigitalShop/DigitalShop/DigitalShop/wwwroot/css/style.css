@@ -709,7 +709,7 @@ form.cart {
     list-style: outside none none;
     margin: 0 0 30px;
     padding: 0;
-    text-align: center;
+    text-align: left;
 }
 .product-tab li {
     display: inline-block;

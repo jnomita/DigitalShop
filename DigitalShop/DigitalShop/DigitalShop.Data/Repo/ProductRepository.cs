@@ -48,6 +48,14 @@ namespace DigitalShop.Data.Repo
            }
         }
 
+          public Product GetHaveCategoryProductByUrl(string url)
+        {
+           using (var db = new DBContext())
+           {
+              return  db.Products.Include(p=>p.Category).ThenInclude(p=>p.Products).FirstOrDefault(p=>p.ProductUrl.Equals(url));
+           }
+        }
+
         public List<Product> GetTopSellProducts()
         {
            using (var db = new DBContext())
