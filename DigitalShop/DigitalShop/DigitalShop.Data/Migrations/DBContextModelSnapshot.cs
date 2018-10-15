@@ -117,6 +117,8 @@ namespace DigitalShop.Data.Migrations
 
                     b.Property<int?>("CategoryID");
 
+                    b.Property<DateTime>("DateCreate");
+
                     b.Property<bool>("IsDelete");
 
                     b.Property<string>("ProductDes");
@@ -146,7 +148,7 @@ namespace DigitalShop.Data.Migrations
             modelBuilder.Entity("DigitalShop.Domain.OrderItem", b =>
                 {
                     b.HasOne("DigitalShop.Domain.Order", "Order")
-                        .WithMany()
+                        .WithMany("OrderItems")
                         .HasForeignKey("OrderID");
 
                     b.HasOne("DigitalShop.Domain.Product", "Product")
@@ -157,7 +159,7 @@ namespace DigitalShop.Data.Migrations
             modelBuilder.Entity("DigitalShop.Domain.Product", b =>
                 {
                     b.HasOne("DigitalShop.Domain.Category", "Category")
-                        .WithMany()
+                        .WithMany("Products")
                         .HasForeignKey("CategoryID");
                 });
 #pragma warning restore 612, 618

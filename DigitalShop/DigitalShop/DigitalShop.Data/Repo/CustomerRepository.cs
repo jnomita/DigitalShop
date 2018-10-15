@@ -12,7 +12,7 @@ namespace DigitalShop.Data.Repo
         {
            using (var db = new DBContext())
            {
-              return  db.Customers.Where(p=>p.IsDelete).ToList();
+              return  db.Customers.Where(p=>!p.IsDelete).ToList();
            }
         }
 

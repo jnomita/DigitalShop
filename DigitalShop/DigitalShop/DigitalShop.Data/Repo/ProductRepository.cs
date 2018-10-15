@@ -12,7 +12,7 @@ namespace DigitalShop.Data.Repo
         {
            using (var db = new DBContext())
            {
-              return  db.Products.Where(p=>p.IsDelete).ToList();
+              return  db.Products.Where(p=>!p.IsDelete).ToList();
            }
         }
 
@@ -20,7 +20,7 @@ namespace DigitalShop.Data.Repo
         {
            using (var db = new DBContext())
            {
-              return  db.Products.Include(p=>p.Category).Where(p=>p.Category.CategoryID==id).ToList();
+              return  db.Products.Include(p=>p.Category).Where(p=>p.Category.CategoryID==id && !p.IsDelete).ToList();
            }
         }
 
@@ -28,7 +28,7 @@ namespace DigitalShop.Data.Repo
         {
            using (var db = new DBContext())
            {
-              return  db.Products.Include(p=>p.Category).Where(p=>p.Category.CategoryUrl==url).ToList();
+              return  db.Products.Include(p=>p.Category).Where(p=>p.Category.CategoryUrl==url && !p.IsDelete).ToList();
            }
         }
 
@@ -45,6 +45,30 @@ namespace DigitalShop.Data.Repo
            using (var db = new DBContext())
            {
               return  db.Products.FirstOrDefault(p=>p.ProductUrl.Equals(url));
+           }
+        }
+
+        public List<Product> GetTopSellProducts()
+        {
+           using (var db = new DBContext())
+           {
+              var list = db.OrderItems.Include(p=>p.Product)
+                .GroupBy(n => n)
+                .Select(n => new
+                    {
+                        Product = n.Key.Product,
+                        Count = n.Count()
+                    }).Where(p=>p.Count>0).OrderBy(n => n.Count).Select(p=>p.Product).Take(5);
+
+                return list.ToList();
+           }
+        }
+
+        public List<Product> GetTopNewProducts()
+        {
+           using (var db = new DBContext())
+           {
+              return  db.Products.OrderByDescending(p=>p.DateCreate).Take(5).ToList();
            }
         }
 

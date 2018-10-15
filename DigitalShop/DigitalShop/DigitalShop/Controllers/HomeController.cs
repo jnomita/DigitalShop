@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using DigitalShop.Models;
+using DigitalShop.Data;
+using Microsoft.AspNetCore.Http;
 
 namespace DigitalShop.Controllers
 {
@@ -12,7 +14,14 @@ namespace DigitalShop.Controllers
     {
         public IActionResult Index()
         {
-            var model = proRes.GetProducts().ToList();
+            //TestData addData= new TestData();
+            var model = new HomeModel()
+            {
+                Categories = catRes.GetHaveProductCategories().ToList(),
+                TopSeller =  proRes.GetTopSellProducts(),
+                RecentlyViewed = GetRecentlyViewed(),
+                TopNew = proRes.GetTopNewProducts()
+            };
             return View(model);
         }
 

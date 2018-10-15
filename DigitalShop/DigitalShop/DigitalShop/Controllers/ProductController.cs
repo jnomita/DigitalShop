@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DigitalShop.Controllers
 {
-    public class ProductController : Controller
+    public class ProductController : BaseController
     {
         public IActionResult Index(string producturl)
         {
+            var product = proRes.GetProductByUrl(producturl);
+            AddRecentlyViewed(product);
             return View();
         }
     }

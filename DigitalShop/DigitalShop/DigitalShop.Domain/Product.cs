@@ -13,6 +13,7 @@ namespace DigitalShop.Domain
         public int ProductID { get; set; }
         public string ProductName { get; set; }
         public string ProductUrl{ get; set; }
+        public DateTime DateCreate { get; set; }
         public string ProductDes { get; set; }
         public double ProductPrice{ get; set; }
         public string ProductImage { get; set; }
