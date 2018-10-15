@@ -15,6 +15,7 @@ namespace DigitalShop.Domain
         public DateTime DateCreate { get; set; }
         public Customer CustomerOrder { get; set; }
         public string ShippingAddress { get; set; }
+        public int Status { get; set; }
         public bool IsDelete { get; set; }
     }
 }
