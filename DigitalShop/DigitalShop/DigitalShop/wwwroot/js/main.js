@@ -86,6 +86,13 @@ jQuery(document).ready(function($){
     $('body').scrollspy({ 
         target: '.navbar-collapse',
         offset: 95
-    })      
+    })   
+
+    $(".cart_item .qty").change(function () {
+        var price = $(this).data("price");
+        var qty = $(this).val();
+        var total = price * qty;
+        $(this).parents(".cart_item").find(".amount").text("$" + total.toFixed(2));
+    })
 });
 

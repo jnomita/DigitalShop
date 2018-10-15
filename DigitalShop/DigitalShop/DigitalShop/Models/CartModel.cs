@@ -17,4 +17,10 @@ namespace DigitalShop.Models
         public Product Product { get; set; }
         public int Qty { get; set; }
     }
+
+    public class CartUpdateItemModel
+    {
+        public int ProductID { get; set; }
+        public int Qty { get; set; }
+    }
 }

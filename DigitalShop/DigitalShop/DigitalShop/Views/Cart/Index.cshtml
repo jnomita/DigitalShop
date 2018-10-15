@@ -24,7 +24,7 @@
             <div class="col-md-12">
                 <div class="product-content-right">
                     <div class="woocommerce">
-                        <form method="post" action="#">
+                        <form method="post" action="/cart/update">
                             <table cellspacing="0" class="shop_table cart">
                                 <thead>
                                     <tr>
@@ -37,41 +37,42 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach (var item in Model.Items) {
-                                    <tr class="cart_item">
-                                        <td class="product-remove">
-                                            <a title="Remove this item" class="remove" href="#">×</a>
-                                        </td>
-                                        <td class="product-thumbnail">
-                                            <a href="/@item.Product.ProductUrl"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="img/@item.Product.ProductImage.Split(",").FirstOrDefault()"></a>
-                                        </td>
-                                        <td class="product-name">
-                                            <a href="/@item.Product.ProductUrl">@item.Product.ProductName</a>
-                                        </td>
-                                        <td class="product-price">
-                                            <span class="amount">$@(item.Product.ProductPrice.ToString("N2"))</span>
-                                        </td>
-                                        <td class="product-quantity">
-                                            <div class="quantity buttons_added">
-                                                <input type="button" class="minus" value="-">
-                                                <input type="number" size="4" class="input-text qty text" title="Qty" value="1" min="0" step="1">
-                                                <input type="button" class="plus" value="+">
-                                            </div>
-                                        </td>
-                                        <td class="product-subtotal">
-                                            <span class="amount" data-price="@item.Product.ProductPrice">$@(item.Product.ProductPrice.ToString("N2"))</span>
-                                        </td>
-                                    </tr>
+                                    @foreach (var item in Model.Items)
+                                    {
+                                       
+                                        <tr class="cart_item">
+                                            <td class="product-remove">
+                                                <input type="hidden" value="@item.Product.ProductID" name="data[0].ProductID" />
+                                                <a title="Remove this item" class="remove" href="/cart/RemoveItem/@item.Product.ProductID">×</a>
+                                            </td>
+                                            <td class="product-thumbnail">
+                                                <a href="/@item.Product.ProductUrl"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="img/@item.Product.ProductImage.Split(",").FirstOrDefault()"></a>
+                                            </td>
+                                            <td class="product-name">
+                                                <a href="/@item.Product.ProductUrl">@item.Product.ProductName</a>
+                                            </td>
+                                            <td class="product-price">
+                                                <span class="amount">$@(item.Product.ProductPrice.ToString("N2"))</span>
+                                            </td>
+                                            <td class="product-quantity">
+                                                <div class="quantity buttons_added">
+                                                    <input type="number" name="data[0].Qty" data-price="@item.Product.ProductPrice" size="4" class="input-text qty text" title="Qty" value="@item.Qty" min="0" step="1">
+                                                </div>
+                                            </td>
+                                            <td class="product-subtotal">
+                                                <span class="amount">$@((item.Product.ProductPrice* item.Qty).ToString("N2"))</span>
+                                            </td>
+                                        </tr>
                                     }
                                     <tr>
                                         <td class="actions" colspan="6">
-                                            <input type="submit" value="Update Cart" name="update_cart" class="button">
-                                            <input type="submit" value="Proceed to Checkout" name="proceed" class="checkout-button button alt wc-forward">
+                                            <button name="update_cart" class="btn btn-warning">Update Cart</button>
+                                            <a href="/cart/processcutomer" class="btn btn-success">Proceed to Checkout</a>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-                        </form>
+                         </form>
                     </div>
                 </div>
             </div>

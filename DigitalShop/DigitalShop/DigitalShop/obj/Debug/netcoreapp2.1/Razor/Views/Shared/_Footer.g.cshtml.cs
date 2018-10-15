@@ -111,7 +111,7 @@ using DigitalShop.Domain;
                         ");
             EndContext();
             BeginContext(2648, 199, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fc8b3a9d61a641a3b16e572543a2cbe2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0ce6dcebe13b49058862c55504c41a0c", async() => {
                 BeginContext(2665, 175, true);
                 WriteLiteral("\r\n                            <input type=\"email\" placeholder=\"Type your email\">\r\n                            <input type=\"submit\" value=\"Subscribe\">\r\n                        ");
                 EndContext();
