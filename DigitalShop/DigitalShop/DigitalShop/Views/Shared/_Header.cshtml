@@ -10,7 +10,7 @@
 
             <div class="col-sm-6">
                 <div class="shopping-item">
-                    <a href="/cart">Cart - <span class="cart-amunt">$@(Model.ProductsCart.Sum(p=>p.Product.ProductPrice).ToString("N2"))</span>
+                    <a href="/cart">Cart - <span class="cart-amunt">$@(Model.ProductsCart.Sum(p=>p.Product.ProductPrice *p.Qty).ToString("N2"))</span>
                     <i class="fa fa-shopping-cart"></i> <span class="product-count">@Model.ProductsCart.Count</span></a>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                     <li class="active"><a href="/">Home</a></li>
                     @foreach(var menu in Model.Menus)
                     {
-                        <li><a href="@menu.CategoryUrl">@menu.CategoryName</a></li>
+                        <li><a href="/@menu.CategoryUrl">@menu.CategoryName</a></li>
                     }
                 </ul>
             </div>

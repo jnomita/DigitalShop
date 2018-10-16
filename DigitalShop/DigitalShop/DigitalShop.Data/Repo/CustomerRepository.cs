@@ -16,6 +16,14 @@ namespace DigitalShop.Data.Repo
            }
         }
 
+        public int MaxCode()
+        {
+           using (var db = new DBContext())
+           {
+              return  db.Customers.Count();
+           }
+        }
+
         public Customer GetCustomerByID(int id)
         {
            using (var db = new DBContext())
@@ -24,6 +32,21 @@ namespace DigitalShop.Data.Repo
            }
         }
 
+        public Customer GetCustomerByPhone(string phone)
+        {
+           using (var db = new DBContext())
+           {
+               return  db.Customers.FirstOrDefault(p=>!p.IsDelete && p.Phone.Equals(phone));
+           }
+        }
+
+        public bool CheckCustomExistsByPhone(string phone)
+        {
+           using (var db = new DBContext())
+           {
+              return  db.Customers.Any(p=>!p.IsDelete && p.Phone.Equals(phone));
+           }
+        }
         public void Add(Customer Customer)
         {
            using (var db = new DBContext())

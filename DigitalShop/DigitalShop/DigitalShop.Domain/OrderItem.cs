@@ -11,8 +11,12 @@ namespace DigitalShop.Domain
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrderItemID { get; set; }
+        [ForeignKey("OrderID")]
         public Order Order { get; set; }
+        public int OrderID { get; set; }
+        [ForeignKey("ProductID")]
         public Product Product { get; set; }
+        public int ProductID { get; set; }
         public double ProductPrice { get; set; }
         public bool IsDelete { get; set; }
     }

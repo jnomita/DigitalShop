@@ -1,0 +1,92 @@
+﻿@model CartModel
+@{
+    ViewData["Title"] = "Customer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>Customer Information</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-content-right">
+                    <div class="woocommerce">
+        
+                        <form enctype="multipart/form-data" action="/cart/ProcessCutomer" class="checkout" method="post" name="checkout">
+                            <div id="customer_details" class="col2-set">
+                                <div class="col-sm-12">
+                                    <div class="woocommerce-billing-fields">
+                                        <h3>Details</h3>
+                                        <p id="billing_country_field" class="form-row form-row-wide address-field update_totals_on_change validate-required woocommerce-validated">
+                                            <label class="" for="billing_country">
+                                                Country <abbr title="required" class="required">*</abbr>
+                                            </label>
+                                            <select name="model.Title" required>
+                                                <option value="Mr" @(Model.Customer.Title= ="Mr" ?"selected":"")>Mr</option>
+                                                <option value="Ms" @(Model.Customer.Title= ="Ms" ?"selected":"")>Ms</option>
+                                            </select>
+                                        </p>
+                                        <p class="form-row form-row-first validate-required">
+                                            <label class="" for="billing_first_name">
+                                                First Name <abbr title="required" class="required">*</abbr>
+                                            </label>
+                                            <input type="text" value="@Model.Customer.FirstName" name="model.FirstName" placeholder="" class="input-text " required>
+                                        </p>
+
+                                        <p class="form-row form-row-first validate-required">
+                                            <label class="" for="billing_first_name">
+                                                Last Name <abbr title="required" class="required">*</abbr>
+                                            </label>
+                                            <input type="text" value="@Model.Customer.LastName" name="model.LastName" placeholder="" class="input-text " required>
+                                        </p>
+
+                                        <p class="form-row form-row-first validate-required">
+                                            <label class="" for="billing_first_name">
+                                                Address <abbr title="required" class="required">*</abbr>
+                                            </label>
+                                            <input type="text" value="@Model.Customer.Address" name="model.Address" placeholder="" class="input-text " required>
+                                        </p>
+
+                                       
+                                        <p class="form-row form-row-first validate-required">
+                                            <label class="" for="billing_first_name">
+                                                Phone <abbr title="required" class="required">*</abbr>
+                                            </label>
+                                            <input type="text" value="@Model.Customer.Phone" name="model.Phone" placeholder="" class="input-text " required>
+                                        </p>
+
+                                        <p class="form-row form-row-first validate-required">
+                                            <label class="" for="billing_first_name">
+                                                Email <abbr title="required" class="required">*</abbr>
+                                            </label>
+                                            <input type="text" value="@Model.Customer.Email" name="model.Email" placeholder="" class="input-text " required>
+                                        </p>
+
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row place-order">
+                                <input type="submit" data-value="Place order" value="Place order" id="place_order" name="woocommerce_checkout_place_order" class="button alt">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

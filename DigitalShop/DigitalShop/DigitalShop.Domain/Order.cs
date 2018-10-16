@@ -13,7 +13,10 @@ namespace DigitalShop.Domain
         public int OrderID { get; set; }
         public string OrderCode { get; set; }
         public DateTime DateCreate { get; set; }
+
+        [ForeignKey("CustomerID")]
         public Customer CustomerOrder { get; set; }
+        public int CustomerID { get; set; }
         public List<OrderItem> OrderItems { get; set; }
         public string ShippingAddress { get; set; }
         public int Status { get; set; }

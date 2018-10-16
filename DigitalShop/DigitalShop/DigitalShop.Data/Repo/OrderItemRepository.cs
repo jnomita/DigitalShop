@@ -40,7 +40,6 @@ namespace DigitalShop.Data.Repo
             {
                 using (var db = new DBContext())
                 {
-
                     db.AddRange(OrderItem);
                     db.SaveChanges();
                 }

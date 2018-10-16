@@ -17,7 +17,9 @@ namespace DigitalShop.Domain
         public string ProductDes { get; set; }
         public double ProductPrice{ get; set; }
         public string ProductImage { get; set; }
+        [ForeignKey("CategoryID")]
         public Category Category { get; set; }
+        public int CategoryID { get; set; }
         public bool IsDelete { get; set; }
     }
 }

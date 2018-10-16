@@ -17,7 +17,7 @@ namespace DigitalShop
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var cartStr = HttpContext.Session.GetString("Cart");
-            var products = cartStr != null ? JsonConvert.DeserializeObject<CartModel>(cartStr).Items : new List<CartItemModel>();
+            var products = cartStr != null &&  cartStr != ""  ? JsonConvert.DeserializeObject<CartModel>(cartStr).Items : new List<CartItemModel>();
             var model = new MenuAndHeaderModel()
             {
                 Menus = catRes.GetCategories(),

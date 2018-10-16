@@ -60,13 +60,13 @@ namespace DigitalShop.Data.Repo
         {
            using (var db = new DBContext())
            {
-              var list = db.OrderItems.Include(p=>p.Product)
+              var list = db.OrderItems.Include(p=>p.Product).Select(p=>p.Product)
                 .GroupBy(n => n)
                 .Select(n => new
                     {
-                        Product = n.Key.Product,
+                        Product = n.Key,
                         Count = n.Count()
-                    }).Where(p=>p.Count>0).OrderBy(n => n.Count).Select(p=>p.Product).Take(5);
+                    }).Where(p=>p.Count>0).OrderByDescending(n => n.Count).Select(p=>p.Product).Take(5);
 
                 return list.ToList();
            }

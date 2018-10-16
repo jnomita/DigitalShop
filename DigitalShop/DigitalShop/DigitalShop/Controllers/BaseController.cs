@@ -7,9 +7,10 @@ using DigitalShop.Domain;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Session;
 using DigitalShop.Models;
 
-namespace DigitalShop.Controllers
+namespace DigitalShop
 {
     public class BaseController : Controller
     {
@@ -54,6 +55,10 @@ namespace DigitalShop.Controllers
             }
             SetObjectAsJson("Cart", cart);
         }
+        protected void ClearCart ()
+        {
+            SetObjectAsJson("Cart", "");
+        }
 
         private void SetObjectAsJson( string key, object value)
         {
@@ -65,5 +70,16 @@ namespace DigitalShop.Controllers
             var value =  HttpContext.Session.GetString(key);
             return value == null ? default(T) : JsonConvert.DeserializeObject<T>(value);
         }
+    }
+
+    public static class HttpHelper
+    {
+         private static IHttpContextAccessor _accessor;
+         public static void Configure(IHttpContextAccessor httpContextAccessor)
+         {
+              _accessor = httpContextAccessor;
+         }
+
+         public static HttpContext HttpContext => _accessor.HttpContext;
     }
 }

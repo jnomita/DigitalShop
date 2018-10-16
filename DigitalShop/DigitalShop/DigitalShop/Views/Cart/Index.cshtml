@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Cart";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    int index = 0;
 }
 
 <div class="product-big-title-area">
@@ -39,10 +40,9 @@
                                 <tbody>
                                     @foreach (var item in Model.Items)
                                     {
-                                       
                                         <tr class="cart_item">
                                             <td class="product-remove">
-                                                <input type="hidden" value="@item.Product.ProductID" name="data[0].ProductID" />
+                                                <input type="hidden" value="@item.Product.ProductID" name="data[@index].ProductID" />
                                                 <a title="Remove this item" class="remove" href="/cart/RemoveItem/@item.Product.ProductID">×</a>
                                             </td>
                                             <td class="product-thumbnail">
@@ -56,13 +56,14 @@
                                             </td>
                                             <td class="product-quantity">
                                                 <div class="quantity buttons_added">
-                                                    <input type="number" name="data[0].Qty" data-price="@item.Product.ProductPrice" size="4" class="input-text qty text" title="Qty" value="@item.Qty" min="0" step="1">
+                                                    <input type="number" name="data[@index].Qty" data-price="@item.Product.ProductPrice" size="4" class="input-text qty text" title="Qty" value="@item.Qty" min="0" step="1">
                                                 </div>
                                             </td>
                                             <td class="product-subtotal">
                                                 <span class="amount">$@((item.Product.ProductPrice* item.Qty).ToString("N2"))</span>
                                             </td>
                                         </tr>
+                                        index++;
                                     }
                                     <tr>
                                         <td class="actions" colspan="6">
