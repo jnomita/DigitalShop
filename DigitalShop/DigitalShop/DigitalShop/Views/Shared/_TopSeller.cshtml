@@ -10,7 +10,7 @@
                     @foreach (var sellProduct in Model.TopSeller)
                     {
                         <div class="single-wid-product">
-                            <a href="@sellProduct.ProductUrl"><img src="img/@sellProduct.ProductImage" alt="" class="product-thumb"></a>
+                            <a href="@sellProduct.ProductUrl"><img src="img/@sellProduct.ProductImage.Split(",").FirstOrDefault()" alt="" class="product-thumb"></a>
                             <h2><a href="@sellProduct.ProductUrl">@sellProduct.ProductName</a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
@@ -33,7 +33,7 @@
                     @foreach (var recentlyProduct in Model.RecentlyViewed)
                     {
                         <div class="single-wid-product">
-                            <a href="@recentlyProduct.ProductUrl"><img src="img/@recentlyProduct.ProductImage" alt="" class="product-thumb"></a>
+                            <a href="@recentlyProduct.ProductUrl"><img src="img/@recentlyProduct.ProductImage.Split(",").FirstOrDefault()" alt="" class="product-thumb"></a>
                             <h2><a href="@recentlyProduct.ProductUrl">@recentlyProduct.ProductName</a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
@@ -56,7 +56,7 @@
                     @foreach (var newProduct in Model.TopNew)
                     {
                         <div class="single-wid-product">
-                            <a href="@newProduct.ProductUrl"><img src="img/@newProduct.ProductImage" alt="" class="product-thumb"></a>
+                            <a href="@newProduct.ProductUrl"><img src="img/@newProduct.ProductImage.Split(",").FirstOrDefault()" alt="" class="product-thumb"></a>
                             <h2><a href="@newProduct.ProductUrl">@newProduct.ProductName</a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
