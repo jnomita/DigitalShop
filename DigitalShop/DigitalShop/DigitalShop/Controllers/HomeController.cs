@@ -14,7 +14,7 @@ namespace DigitalShop.Controllers
     {
         public IActionResult Index()
         {
-            //TestData addData= new TestData();
+            TestData addData= new TestData();
             var model = new HomeModel()
             {
                 Categories = catRes.GetHaveProductCategories().ToList(),

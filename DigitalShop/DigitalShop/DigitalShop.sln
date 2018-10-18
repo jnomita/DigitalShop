@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalShop.Domain", "Digit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalShop.Data", "DigitalShop.Data\DigitalShop.Data.csproj", "{641093A7-7772-4EC7-8A31-60B3BBD0933F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalShop.Admin", "DigitalShop.Admin\DigitalShop.Admin.csproj", "{CFBD8A41-19B7-4F50-85B8-1EA6AA4ED234}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{641093A7-7772-4EC7-8A31-60B3BBD0933F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{641093A7-7772-4EC7-8A31-60B3BBD0933F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{641093A7-7772-4EC7-8A31-60B3BBD0933F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CFBD8A41-19B7-4F50-85B8-1EA6AA4ED234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CFBD8A41-19B7-4F50-85B8-1EA6AA4ED234}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CFBD8A41-19B7-4F50-85B8-1EA6AA4ED234}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CFBD8A41-19B7-4F50-85B8-1EA6AA4ED234}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

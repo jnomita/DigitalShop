@@ -1,6 +1,7 @@
 ﻿using DigitalShop.Domain;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace DigitalShop.Data
@@ -34,8 +35,11 @@ namespace DigitalShop.Data
         {
            using (var db = new DBContext())
            {
-                db.AddRange(products);
-                db.SaveChanges();
+                if (!db.Products.Any())
+                {
+                    db.AddRange(products);
+                    db.SaveChanges();
+                }
            }
         }
     }
