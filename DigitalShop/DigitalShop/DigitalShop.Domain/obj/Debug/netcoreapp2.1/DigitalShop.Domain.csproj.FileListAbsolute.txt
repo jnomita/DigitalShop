@@ -1,9 +1,0 @@
-E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop.Domain\bin\Debug\netcoreapp2.1\DigitalShop.Domain.deps.json
-E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop.Domain\bin\Debug\netcoreapp2.1\DigitalShop.Domain.dll
-E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop.Domain\bin\Debug\netcoreapp2.1\DigitalShop.Domain.pdb
-E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop.Domain\obj\Debug\netcoreapp2.1\DigitalShop.Domain.csproj.CoreCompileInputs.cache
-E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop.Domain\obj\Debug\netcoreapp2.1\DigitalShop.Domain.AssemblyInfoInputs.cache
-E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop.Domain\obj\Debug\netcoreapp2.1\DigitalShop.Domain.AssemblyInfo.cs
-E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop.Domain\obj\Debug\netcoreapp2.1\DigitalShop.Domain.dll
-E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop.Domain\obj\Debug\netcoreapp2.1\DigitalShop.Domain.pdb
-E:\pdn\shoppingcart\DigitalShop\DigitalShop\DigitalShop.Domain\obj\Debug\netcoreapp2.1\DigitalShop.Domain.csprojAssemblyReference.cache
