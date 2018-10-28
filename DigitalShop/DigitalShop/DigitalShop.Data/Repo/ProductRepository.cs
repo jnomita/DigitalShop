@@ -16,6 +16,14 @@ namespace DigitalShop.Data.Repo
            }
         }
 
+        public List<Product> GetHaveCategoryProducts()
+        {
+            using (var db = new DBContext())
+            {
+                return db.Products.Include(p=>p.Category).Where(p => !p.IsDelete).ToList();
+            }
+        }
+
         public List<Product> GetProductsByCategoryID(int id)
         {
            using (var db = new DBContext())
@@ -87,6 +95,16 @@ namespace DigitalShop.Data.Repo
                 db.AddRange(Product);
                 db.SaveChanges();
            }
+        }
+
+        public void Update(Product product)
+        {
+            using (var db = new DBContext())
+            {
+                db.Entry(product).State = EntityState.Modified;
+                db.Update(product);
+                db.SaveChanges();
+            }
         }
 
         public void Delete(int id)

@@ -1,0 +1,74 @@
+﻿@model DigitalShop.Domain.Product
+
+@{
+    ViewData["Title"] = "Product Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    var categories = (List<DigitalShop.Domain.Category>)ViewBag.Categories;
+}
+<script>
+  var loadFile = function(event) {
+      var output = document.getElementById('imageview');
+    output.src = URL.createObjectURL(event.target.files[0]);
+  };
+</script>
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit" method="post" enctype="multipart/form-data">
+            <div class="col-xs-4">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="ProductID" value="@Model.ProductID" name="model.ProductID" />
+                <input type="hidden"  value="@Model.ProductImage" name="model.ProductImage" />
+                <div class="form-group">
+                    <label asp-for="ProductName" class="control-label">Product Name</label>
+                    <input asp-for="ProductName" class="form-control" value="@Model.ProductName" name="model.ProductName" />
+                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProductUrl" class="control-label">Product Url</label>
+                    <input asp-for="ProductUrl" class="form-control" value="@Model.ProductUrl" name="model.ProductUrl" />
+                    <span asp-validation-for="ProductUrl" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DateCreate" class="control-label">Date Create</label>
+                    <input asp-for="DateCreate" class="form-control" value="@Model.DateCreate" disabled name="model.DateCreate" />
+                    <span asp-validation-for="DateCreate" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ProductPrice" class="control-label">Product Price</label>
+                    <input asp-for="ProductPrice" class="form-control" value="@Model.ProductPrice" name="model.ProductPrice" />
+                    <span asp-validation-for="ProductPrice" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CategoryID" class="control-label">Category</label>
+                    <select asp-for="CategoryID" class="form-control" name="model.CategoryID" required>
+                        @foreach (var cat in categories)
+                        {
+                            <option value="@cat.CategoryID" @(Model.CategoryID == cat.CategoryID ? "selected" : "")>@cat.CategoryName</option>
+                        }
+                    </select>
+                    <span asp-validation-for="CategoryID" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ProductDes" class="control-label">Product Description</label>
+                    <input type="text" asp-for="ProductDes" class="form-control text-left" value="@Model.ProductDes" name="model.ProductDes" />
+                    <span asp-validation-for="ProductDes" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="imageview" style="width:400px;margin-bottom:10px;">
+                    <img width="400" id="imageview" src="http://jigsawoosh.com.au/Content/Admin/images/no-image.jpg"  />
+                </div>
+                <div>
+                    <input type="file" name="image" onchange="loadFile(event)" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
