@@ -7,14 +7,28 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DigitalShop.Areas.Admin.Controllers
 {
-    public class AdminOrderController : Controller
+    [Area("Admin")]
+    [Authorize]
+    public class AdminOrderController : BaseController
     {
-        
-        [Area("Admin")]
-        [Authorize]
         public IActionResult Index()
         {
-            return View();
+            var orders = ordRes.GetOrders();
+            return View(orders);
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var order = ordRes.GetOrderByID(id);
+            return View(order);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(int OrderID,int Status)
+        {
+            ordRes.UpdateStatus(OrderID, Status);
+            return RedirectToAction("Index");
         }
     }
 }

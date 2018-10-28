@@ -17,6 +17,7 @@ namespace DigitalShop.Domain
         [ForeignKey("ProductID")]
         public Product Product { get; set; }
         public int ProductID { get; set; }
+        public int Qty { get; set; }
         public double ProductPrice { get; set; }
         public bool IsDelete { get; set; }
     }

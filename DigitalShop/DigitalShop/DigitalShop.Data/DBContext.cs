@@ -17,7 +17,7 @@ namespace DigitalShop.Data
         {
             optionsBuilder
                 .EnableSensitiveDataLogging(true)
-                .UseSqlServer(@"Data Source=DESKTOP-AM8FIS3\SQLEXPRESS;Initial Catalog=DigitalShop; Trusted_Connection=True;");
+                .UseSqlServer(@"Data Source=DESKTOP-OR2DL8D;Initial Catalog=DigitalShop; Trusted_Connection=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

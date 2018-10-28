@@ -51,10 +51,22 @@ namespace DigitalShop.Data.Repo
         {
            using (var db = new DBContext())
            {
+                category.IsDelete = false;
                 db.AddRange(category);
                 db.SaveChanges();
            }
         }
+
+        public void Update(Category category)
+        {
+            using (var db = new DBContext())
+            {
+                db.Entry(category).State = EntityState.Modified;
+                db.Update(category);
+                db.SaveChanges();
+            }
+        }
+
 
         public void Delete(int id)
         {

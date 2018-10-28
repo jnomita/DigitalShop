@@ -1,0 +1,31 @@
+﻿@model DigitalShop.Domain.Category
+
+@{
+    ViewData["Title"] = "Edit Category";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" name="model.CategoryID" value="@Model.CategoryID" />
+            <input type="hidden" name="model.IsDelete" value="@Model.IsDelete" />
+            <div class="form-group">
+                <label class="control-label">Category Name</label>
+                <input name="model.CategoryName" class="form-control" value="@Model.CategoryName" />
+                <span asp-validation-for="CategoryName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Category Url</label>
+                <input name="model.CategoryUrl" class="form-control" value="@Model.CategoryUrl" />
+                <span asp-validation-for="CategoryUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+

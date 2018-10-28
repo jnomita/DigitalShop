@@ -122,6 +122,7 @@ namespace DigitalShop.Controllers
             var items = cart.Items.Select(p => new OrderItem {
                 IsDelete = false,
                 ProductID = p.Product.ProductID,
+                Qty = p.Qty,
                 OrderID = order.OrderID,
                 ProductPrice = p.Product.ProductPrice,
             }).ToList();

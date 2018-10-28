@@ -1,8 +1,32 @@
-﻿
+﻿@using DigitalShop.Domain
+@model IEnumerable<Category>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Categories";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
-
+<a href="/admin/admincategory/edit/0" class="btn btn-warning" style="margin-bottom:10px;">Create</a>
+<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+    <thead>
+        <tr>
+            <th>CategoryID</th>
+            <th>Category Name</th>
+            <th>Category Url</th>
+            <td style="width:160px;"></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CategoryID</td>
+                <td>@item.CategoryName</td>
+                <td>@item.CategoryUrl</td>
+                <td>
+                    <a href="/admin/admincategory/edit/@item.CategoryID" class="btn btn-success">Edit</a>
+                    <a href="/admin/admincategory/delete/@item.CategoryID" class="btn btn-danger">Remove</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

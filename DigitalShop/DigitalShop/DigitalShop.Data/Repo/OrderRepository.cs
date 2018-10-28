@@ -20,7 +20,9 @@ namespace DigitalShop.Data.Repo
         {
            using (var db = new DBContext())
            {
-              return  db.Orders.Find(id);
+              var order = db.Orders.Include(p => p.CustomerOrder).FirstOrDefault(p => p.OrderID == id);
+              order.OrderItems = db.OrderItems.Include(p => p.Product).ToList();
+              return order;
            }
         }
 
@@ -31,6 +33,16 @@ namespace DigitalShop.Data.Repo
                 db.AddRange(Order);
                 db.SaveChanges();
            }
+        }
+
+        public void UpdateStatus(int OrderID, int Status)
+        {
+            using (var db = new DBContext())
+            {
+                var order = db.Orders.Find(OrderID);
+                order.Status = Status;
+                db.SaveChanges();
+            }
         }
 
         public void Delete(int id)

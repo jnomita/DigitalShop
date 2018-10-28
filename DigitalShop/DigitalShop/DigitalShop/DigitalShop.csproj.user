@@ -11,5 +11,6 @@
     <WebStackScaffolding_ControllerDialogWidth>600</WebStackScaffolding_ControllerDialogWidth>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_DependencyDialogWidth>600</WebStackScaffolding_DependencyDialogWidth>
+    <WebStackScaffolding_DbContextTypeFullName>DigitalShop.Data.DBContext</WebStackScaffolding_DbContextTypeFullName>
   </PropertyGroup>
 </Project>
