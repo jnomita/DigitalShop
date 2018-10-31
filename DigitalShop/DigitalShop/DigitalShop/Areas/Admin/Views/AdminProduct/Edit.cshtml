@@ -61,7 +61,7 @@
             </div>
             <div class="col-xs-4">
                 <div class="imageview" style="width:400px;margin-bottom:10px;">
-                    <img width="400" id="imageview" src="http://jigsawoosh.com.au/Content/Admin/images/no-image.jpg"  />
+                    <img width="400" id="imageview" src="@(Model.ProductImage!=null && Model.ProductImage.Length>1?"/img/"+Model.ProductImage:"http://jigsawoosh.com.au/Content/Admin/images/no-image.jpg")" />
                 </div>
                 <div>
                     <input type="file" name="image" onchange="loadFile(event)" />
